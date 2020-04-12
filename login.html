@@ -11,8 +11,17 @@
         <script type="text/javascript">
         function validate()
         {
-            var username = document.getElementById("uname");
+            var username = document.getElementById("uname").value;
             var password = document.getElementById("pass");
+            var regx = /[^-!$%&*_+]/;
+            if(regx.test(username))
+            {
+                alert("Valid Username")
+            }
+            else
+            { alert("Invalid Username")
+
+            }
 
             if(username.value =="" ||password.value=="" )
             {
@@ -22,6 +31,12 @@
             else
             {
                 true;
+            }
+            if(username.length<7)
+            {
+                text ="Please enter valid username";
+                error_message.innerHTML = text;
+                return false;
             }
         }
         </script>
